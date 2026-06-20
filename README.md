@@ -5,18 +5,9 @@
 [![license](https://img.shields.io/npm/l/@bobfromarcher/licsweep?color=blue)](LICENSE)
 [![zero deps](https://img.shields.io/badge/dependencies-0-success)](package.json)
 
-> One `GPL` dependency can legally oblige you to open-source your whole product. **licsweep** audits every license in your `node_modules`, buckets them by risk, and fails CI the moment a forbidden one sneaks in. **Zero dependencies. Zero AI.**
+Audits the licenses of your installed npm dependencies. It buckets every package by risk and can fail CI when a forbidden license shows up. One copyleft dependency can carry obligations you did not intend to take on, and this catches it before it ships. No dependencies, no AI.
 
-```
-  ● licsweep  68 dependencies
-
-    ✓ permissive     68
-    ~ weak-copyleft  0
-    ✗ copyleft       0
-    ? unknown        0
-
-  top licenses: MIT (63), ISC (4), BSD-3-Clause (1)
-```
+<p align="center"><img src="demo.svg" alt="licsweep summarizing dependency licenses" width="500"></p>
 
 ## Install
 
@@ -34,29 +25,27 @@ licsweep [path] [options]
 
 | Option | Description |
 | --- | --- |
-| `--check` | Exit `1` if any dependency matches `--deny` (CI gate) |
-| `--deny <list>` | Comma-separated licenses/categories to forbid |
-| `--flagged` | Show only weak-copyleft / copyleft / unknown packages |
+| `--check` | Exit 1 if any dependency matches `--deny` |
+| `--deny <list>` | Comma-separated licenses or categories to forbid |
+| `--flagged` | Show only weak-copyleft, copyleft and unknown packages |
 | `--markdown`, `--md` | Markdown report |
 | `--json` | Raw JSON |
 | `-h, --help` | Show help |
 | `-v, --version` | Show version |
 
-### Examples
+## Examples
 
 ```bash
 licsweep                          # summary of every dependency's license
-licsweep --flagged                # just the ones worth a second look
-licsweep --check --deny copyleft  # fail CI if any viral copyleft slips in
+licsweep --flagged                # only the ones worth a second look
+licsweep --check --deny copyleft  # fail CI if any viral copyleft is present
 licsweep --deny "GPL*,AGPL*"      # forbid specific SPDX ids (globs allowed)
 licsweep --markdown > LICENSES.md
 ```
 
-`--deny` accepts **categories** (`permissive`, `weak-copyleft`, `copyleft`,
-`unknown`) and **license globs** (`GPL*`, `AGPL-3.0`). With `--check` and no
-explicit list, it defaults to denying `copyleft,unknown`.
+`--deny` accepts categories (`permissive`, `weak-copyleft`, `copyleft`, `unknown`) and license globs (`GPL*`, `AGPL-3.0`). With `--check` and no explicit list, it defaults to denying `copyleft,unknown`.
 
-### Gate it in CI
+## Gate it in CI
 
 ```yaml
 # .github/workflows/licenses.yml
@@ -67,13 +56,12 @@ explicit list, it defaults to denying `copyleft,unknown`.
 
 | Bucket | Examples | Meaning |
 | --- | --- | --- |
-| **permissive** | MIT, ISC, BSD, Apache-2.0, 0BSD, CC0 | Safe to ship in closed source |
-| **weak-copyleft** | LGPL, MPL-2.0, EPL, CDDL | File-/library-level obligations |
-| **copyleft** | GPL, AGPL, SSPL, OSL, EUPL | Viral — can force you to open-source |
-| **unknown** | missing / unrecognized | Investigate before shipping |
+| permissive | MIT, ISC, BSD, Apache-2.0, 0BSD, CC0 | Safe to ship in closed source |
+| weak-copyleft | LGPL, MPL-2.0, EPL, CDDL | File or library level obligations |
+| copyleft | GPL, AGPL, SSPL, OSL, EUPL | Viral, can require you to open-source |
+| unknown | missing or unrecognized | Investigate before shipping |
 
-SPDX expressions like `(GPL-3.0 OR MIT)` are resolved to their **most
-permissive** option, matching how you're actually allowed to use them.
+SPDX expressions like `(GPL-3.0 OR MIT)` are resolved to their most permissive option, which matches how you are actually allowed to use them.
 
 ## Development
 
@@ -83,8 +71,8 @@ cd licsweep
 node test/test.js
 ```
 
-CI runs the suite on Node 18/20/22 across Linux, macOS and Windows.
+CI runs the suite on Node 18, 20 and 22 across Linux, macOS and Windows.
 
 ## License
 
-MIT © bobfromarcher
+MIT, bobfromarcher.

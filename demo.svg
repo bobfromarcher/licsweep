@@ -1,0 +1,39 @@
+<svg width="393" height="560" viewBox="0 0 393 560" xmlns="http://www.w3.org/2000/svg" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" role="img" aria-label="Terminal demo: licsweep">
+<style>
+.ln{opacity:0;animation:rise .32s ease forwards}
+@keyframes rise{from{opacity:0}to{opacity:1}}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.cur{animation:blink 1.1s step-end infinite}
+</style>
+<rect x="0" y="0" width="393" height="560" rx="10" fill="#0d1117" stroke="#30363d"/>
+<rect x="0" y="0" width="393" height="32" rx="10" fill="#161b22"/>
+<rect x="0" y="20" width="393" height="12" fill="#161b22"/>
+<circle cx="18" cy="16" r="5" fill="#ff5f56"/><circle cx="36" cy="16" r="5" fill="#ffbd2e"/><circle cx="54" cy="16" r="5" fill="#27c93f"/>
+<text x="196.5" y="20" fill="#7d8590" text-anchor="middle" font-size="12">licsweep</text>
+<text xml:space="preserve" x="18" y="69"><tspan fill="#3fb950">$ </tspan><tspan fill="#e6edf3">licsweep</tspan></text>
+<rect class="cur" x="103.3" y="57.0" width="7.5" height="15" fill="#c9d1d9"/>
+<text class="ln" xml:space="preserve" x="18" y="88" fill="#39c5cf" style="animation-delay:0.35s">  ● licsweep  68 dependencies</text>
+<text class="ln" xml:space="preserve" x="18" y="107" fill="#c9d1d9" style="animation-delay:0.47s"> </text>
+<text class="ln" xml:space="preserve" x="18" y="126" fill="#3fb950" style="animation-delay:0.59s">    ✓ permissive     68</text>
+<text class="ln" xml:space="preserve" x="18" y="145" fill="#c9d1d9" style="animation-delay:0.71s">    ~ weak-copyleft  0</text>
+<text class="ln" xml:space="preserve" x="18" y="164" fill="#f85149" style="animation-delay:0.83s">    ✗ copyleft       0</text>
+<text class="ln" xml:space="preserve" x="18" y="183" fill="#c9d1d9" style="animation-delay:0.95s">    ? unknown        0</text>
+<text class="ln" xml:space="preserve" x="18" y="202" fill="#c9d1d9" style="animation-delay:1.07s"> </text>
+<text class="ln" xml:space="preserve" x="18" y="221" fill="#3fb950" style="animation-delay:1.19s">    ✓ accepts                            MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="240" fill="#3fb950" style="animation-delay:1.31s">    ✓ body-parser                        MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="259" fill="#3fb950" style="animation-delay:1.43s">    ✓ bytes                              MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="278" fill="#3fb950" style="animation-delay:1.55s">    ✓ call-bind-apply-helpers            MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="297" fill="#3fb950" style="animation-delay:1.67s">    ✓ call-bound                         MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="316" fill="#3fb950" style="animation-delay:1.79s">    ✓ chalk                              MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="335" fill="#3fb950" style="animation-delay:1.91s">    ✓ content-disposition                MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="354" fill="#3fb950" style="animation-delay:2.03s">    ✓ content-type                       MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="373" fill="#3fb950" style="animation-delay:2.15s">    ✓ cookie                             MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="392" fill="#3fb950" style="animation-delay:2.27s">    ✓ cookie-signature                   MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="411" fill="#3fb950" style="animation-delay:2.39s">    ✓ debug                              MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="430" fill="#3fb950" style="animation-delay:2.51s">    ✓ depd                               MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="449" fill="#3fb950" style="animation-delay:2.63s">    ✓ dunder-proto                       MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="468" fill="#3fb950" style="animation-delay:2.75s">    ✓ ee-first                           MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="487" fill="#3fb950" style="animation-delay:2.87s">    ✓ encodeurl                          MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="506" fill="#3fb950" style="animation-delay:2.99s">    ✓ es-define-property                 MIT</text>
+<text class="ln" xml:space="preserve" x="18" y="525" fill="#c9d1d9" style="animation-delay:3.11s">  …</text>
+</svg>

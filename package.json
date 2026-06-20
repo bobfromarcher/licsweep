@@ -1,8 +1,8 @@
 {
   "name": "@bobfromarcher/licsweep",
   "publishConfig": { "access": "public" },
-  "version": "1.0.0",
-  "description": "Audit the licenses of your installed npm dependencies — flag copyleft/unknown and fail CI on a deny-list. Zero dependencies.",
+  "version": "1.0.1",
+  "description": "Audit the licenses of your installed npm dependencies - flag copyleft/unknown and fail CI on a deny-list. Zero dependencies.",
   "bin": { "licsweep": "bin/licsweep.js" },
   "scripts": { "test": "node test/test.js", "start": "node bin/licsweep.js" },
   "keywords": [

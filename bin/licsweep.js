@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /*
- * licsweep — audit the licenses of your installed npm dependencies.
+ * licsweep - audit the licenses of your installed npm dependencies.
  * Flags copyleft / unknown licenses and can fail CI on a deny-list.
  * Zero dependencies. Zero AI.
  */
@@ -90,7 +90,7 @@ const CAT_COLOR = { permissive: green, 'weak-copyleft': yellow, copyleft: red, u
 const CAT_MARK = { permissive: '✓', 'weak-copyleft': '~', copyleft: '✗', unknown: '?' };
 
 const HELP = `
-licsweep — audit the licenses of your installed npm dependencies.
+licsweep - audit the licenses of your installed npm dependencies.
 
 Usage:
   licsweep [path] [options]
@@ -157,7 +157,7 @@ function main() {
   // summary view
   process.stdout.write(`\n  ${bold(cyan('● licsweep'))}  ${dim(sum.total + ' dependencies')}\n\n`);
   if (!sum.total) {
-    process.stdout.write(`  ${dim('no node_modules found — run `npm install` first')}\n\n`);
+    process.stdout.write(`  ${dim('no node_modules found - run `npm install` first')}\n\n`);
     return;
   }
   for (const cat of ['permissive', 'weak-copyleft', 'copyleft', 'unknown'])
@@ -165,7 +165,7 @@ function main() {
   process.stdout.write('\n');
 
   const show = o.flagged ? records.filter((r) => r.category !== 'permissive') : records;
-  if (o.flagged && !show.length) process.stdout.write(`  ${green('✓')} nothing flagged — all permissive\n`);
+  if (o.flagged && !show.length) process.stdout.write(`  ${green('✓')} nothing flagged - all permissive\n`);
   for (const r of show) {
     const col = CAT_COLOR[r.category];
     process.stdout.write(`    ${col(CAT_MARK[r.category])} ${r.name.padEnd(34)} ${dim(r.license)}\n`);
